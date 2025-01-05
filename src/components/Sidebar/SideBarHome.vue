@@ -98,11 +98,11 @@
       >
         <!-- Avatar -->
         <article
-          class="h-14 w-14 my-2 rounded-full bg-gradient-to-b from-violet-200 to-violet-600 flex justify-center items-center overflow-hidden"
+          class="h-14 w-14 my-2  p-5  rounded-full bg-gradient-to-b from-violet-200 to-violet-600 flex justify-center items-center overflow-hidden"
         >
           <img
             :src="item.avatar == '' ? profil : item.avatar"
-            :class="[item.avatar == '' ? 'h-6 w-6' : '', 'h-full w-full object-cover']"
+            :class="[item.avatar == '' ? ' size-3 '     : '', 'h-full w-full object-cover']"
             alt=""
           />
         </article>
