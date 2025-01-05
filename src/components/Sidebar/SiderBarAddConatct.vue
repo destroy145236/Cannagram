@@ -10,7 +10,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 1">
-            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" :src="back" alt="" />
           </button>
           <p class="font-medium">Ajout de membres</p>
         </article>
@@ -41,13 +41,15 @@
       @click="store.indexSideBar = 1"
       class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%] md:left-[45%] lg:left-[15%] m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="@/assets/images/icons/forward_icon.png" alt="Gallery Icon" />
+      <img :src="forward" alt="Gallery Icon" />
     </button>
   </section>
 </template>
 
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import back from '@/assets/images/icons/Back_Icon.png'
+import forward from '@/assets/images/icons/forward_icon.png'
 import { ref } from 'vue'
 
 export default {
@@ -67,6 +69,8 @@ export default {
       store,
 
       settings,
+      back,
+      forward,
     }
   },
 }

@@ -8,7 +8,7 @@
     >
       <form @submit.prevent="store.handleSubmit" class="w-full" action="">
         <button class="flex flex-row py-6" @click="store.toogleSendly">
-          <img src="@/assets/images/icons/Close_Icon.png" alt="" />
+          <img :src="Close" alt="" />
           <p class="text-lg px-4 text-white font-semibold">
             Envoyer un {{ store.fileType.startsWith('application/') ? 'Document' : 'Media' }}
           </p>
@@ -24,7 +24,7 @@
             <article
               class="flex w-[80%] -flex-row items-center justify-center rounded-xl gap-2 p-4"
             >
-              <img src="@/assets/images/icons/document.png" class="h-14" alt="" />
+              <img :src="Document" class="h-14" alt="" />
               <article class="flex flex-col text-white">
                 <p class="text-white text-lg">{{ store.fileName }}</p>
                 <p>{{ store.filesize }} ko</p>
@@ -50,6 +50,8 @@
 </template>
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import Close from '@/assets/images/icons/Close_Icon.png'
+import Document from '@/assets/images/icons/document.png'
 
 export default {
   setup() {
@@ -57,6 +59,8 @@ export default {
 
     return {
       store,
+      Close,
+      Document,
     }
   },
 }

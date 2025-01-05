@@ -9,7 +9,7 @@
         for="uploadPhotoVideo"
         class="cursor-pointer flex flex-row items-center gap-2 p-2 text-white rounded-md hover:bg-violet-600"
       >
-        <img src="@/assets/images/icons/Gallery_Icon.png" alt="Gallery Icon" />
+        <img :src="Gallery" alt="Gallery Icon" />
         <p>Photo ou Vidéo</p>
       </label>
       <input
@@ -25,7 +25,7 @@
         for="uploadDocument"
         class="cursor-pointer flex flex-row items-center gap-2 p-2 text-white rounded-md hover:bg-violet-600"
       >
-        <img src="@/assets/images/icons/File_Icon.png" alt="Gallery Icon" />
+        <img :src="File" alt="Gallery Icon" />
         <p>Document</p>
       </label>
       <input
@@ -40,6 +40,8 @@
 </template>
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import Gallery from '@/assets/images/icons/Gallery_Icon.png'
+import File from '@/assets/images/icons/File_Icon.png'
 
 export default {
   setup() {
@@ -47,6 +49,8 @@ export default {
 
     return {
       store,
+      Gallery,
+      File
     }
   },
 }

@@ -7,7 +7,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 2">
-            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" :src="back" alt="" />
           </button>
           <p>Modifier le profil</p>
         </article>
@@ -21,7 +21,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
+              <img class="h-14 hover:h-16" :src="CameraAdd" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -102,6 +102,8 @@
 <script>
 import { useChatStore } from '../../stores/chatsore'
 import { ref } from 'vue'
+import CameraAdd from '@/assets/images/icons/Camera_Add_Icon.png'
+import back from '@/assets/images/icons/Back_Icon.png'
 
 export default {
   setup() {
@@ -120,6 +122,8 @@ export default {
       store,
 
       settings,
+      back,
+      CameraAdd,
     }
   },
 }

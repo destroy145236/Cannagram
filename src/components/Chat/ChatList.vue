@@ -18,8 +18,7 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart;
-                store.applyReactionsDefault(item.id)
+                store.showHeart = !store.showHeart; store.applyReactionsDefault(item.id)
               "
               :class="[
                 'p-2 flex my-2 gap-1 cursor-pointer  max-w-[70%] h-[20%] md:max-w-[50%] lg:max-w-[30%] w-auto break-words',
@@ -43,7 +42,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" :src="sendvalide" alt="" />
                       </p>
                     </article>
                   </div>
@@ -74,7 +73,7 @@
                       class="flex flex-col items-start justify-center rounded-xl gap-2 px-6"
                     >
                       <article class="flex flex-row items-center justify-center gap-2">
-                        <img src="@/assets/images/icons/document.png" class="h-10" alt="" />
+                        <img :src="document" class="h-10" alt="" />
                         <article class="flex flex-col items-start text-white">
                           <p class="text-white text-md overflow-x-hidden text-start">
                             {{ item.fileName }}
@@ -98,7 +97,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" :src="sendvalide" alt="" />
                       </p>
                     </article>
                   </div>
@@ -141,8 +140,7 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart;
-                store.applyReactionsCanal(item.id)
+                store.showHeart = !store.showHeart;  store.applyReactionsCanal(item.id)
               "
               :class="[
                 'p-2 flex m-2 gap-1 cursor-pointer bg-selectedBubble max-w-[80%] md:max-w-[50%] lg:max-w-[30%] break-words',
@@ -164,7 +162,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" :src="sendvalide" alt="" />
                       </p>
                     </article>
                   </div>
@@ -188,7 +186,7 @@
                       @click="store.downloadFile(item.media)"
                       class="flex flex-row items-center justify-center rounded-xl gap-2 p-4"
                     >
-                      <img src="@/assets/images/icons/document.png" class="h-14" alt="" />
+                      <img :src="document" class="h-14" alt="" />
                       <article class="flex flex-col items-start text-white">
                         <p class="text-white text-lg">{{ item.fileName }}</p>
                         <p>{{ item.filesize }} ko</p>
@@ -208,7 +206,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" :src="sendvalide" alt="" />
                       </p>
                     </article>
                   </div>
@@ -240,7 +238,7 @@
           <!-- Icône de recherche -->
           <div class="relative left-7">
             <button type="button" @click="toggleEmojiPicker">
-              <img src="@/assets/images/icons/emoji_icon.png" alt="Emoji" />
+              <img :src="emoji" alt="Emoji" />
             </button>
             <div v-if="store.showEmojiPicker" class="absolute bottom-full left-0 z-50">
               <EmojiPicker @select="onSelectEmoji" />
@@ -259,7 +257,7 @@
           <button type="button" @click="store.toogleFile">
             <img
               class="absolute right-3 bottom-1/4"
-              src="@/assets/images/icons/Attach_Icon.png"
+              :src="attach"
               alt="Upload_Icon"
             />
           </button>
@@ -267,7 +265,7 @@
         <ModalForUplaod />
 
         <button type="submit" class="bg-violet-600 rounded-full p-4">
-          <img class=" " src="@/assets/images/icons/Send_icon.png" alt="Send Icon" />
+          <img class=" " :src="send" alt="Send Icon" />
         </button>
       </form>
     </section>
@@ -278,6 +276,11 @@ import { useChatStore } from '../../stores/chatsore'
 import EmojiPicker from 'vue3-emoji-picker'
 import ModalForUplaod from '../Modal/ModalForUplaod.vue'
 import 'vue3-emoji-picker/css'
+import sendvalide from '@/assets/images/icons/vue.png'
+import document from '@/assets/images/icons/document.png'
+import emoji from '@/assets/images/icons/Emoji_Icon.png'
+import attach from '@/assets/images/icons/Attach_Icon.png'
+import send from '@/assets/images/icons/Send_icon.png'
 
 export default {
   components: {
@@ -301,6 +304,11 @@ export default {
       store,
       onSelectEmoji,
       toggleEmojiPicker,
+      sendvalide,
+      document,
+      emoji,
+      attach,
+      send
     }
   },
 }

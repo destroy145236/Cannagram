@@ -2,7 +2,7 @@
   <div class="bg-background flex flex-col items-center justify-center h-screen w-screen">
     <section class="flex flex-col items-center justify-center">
       <img
-        src="@/assets/images/icons/cannagramqr.png"
+        :src="CannagramQr"
         alt="Logo"
         class="h-[50%] w-[70%] sm:h-[40%] sm:w-[45%] md:h-[40%] md:w-[75%]"
       />
@@ -26,6 +26,7 @@
 
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import CannagramQr from '@/assets/images/icons/cannagramqr.png'
 
 export default {
   setup() {
@@ -33,6 +34,7 @@ export default {
 
     return {
       store,
+      CannagramQr,
     }
   },
 }

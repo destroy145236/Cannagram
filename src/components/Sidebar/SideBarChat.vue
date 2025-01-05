@@ -10,7 +10,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.openSideBarChatAppContact = false">
-            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" :src="back" alt="" />
           </button>
           <p class="font-medium">Ajout de membres</p>
         </article>
@@ -40,7 +40,7 @@
     <button
       class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%] md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="@/assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
+      <img :src="adduser" alt="Gallery Icon" />
     </button>
   </section>
   <section
@@ -54,7 +54,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.openSideBarChat = false">
-            <img class="h-5" src="@/assets/images/icons/Close_Icon.png" alt="" />
+            <img class="h-5" :src="close" alt="" />
           </button>
           <p class="font-medium">Infos du Canal</p>
         </article>
@@ -68,7 +68,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
+              <img class="h-14 hover:h-16" :src="CameraAdd" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -81,14 +81,14 @@
         </article>
       </section>
       <section class="flex flex-row gap-8 mx-2 items-center">
-        <button><img class="h-5" src="@/assets/images/icons/Phone_Icon.png" alt="" /></button>
+        <button><img class="h-5" :src="phone" alt="" /></button>
         <article>
           <p class="text-white text-md">C.me/Canaltest</p>
           <p class="text-sm text-secondaryText">Lien</p>
         </article>
       </section>
       <section class="flex flex-row gap-8 m-3 items-center">
-        <button><img class="h-5" src="@/assets/images/icons/Phone_Icon.png" alt="" /></button>
+        <button><img class="h-5" :src="phone" alt="" /></button>
         <article class="flex flex-row w-full justify-between">
           <p class="text-white text-md">Notifications</p>
           <input type="checkbox" name="" id="" />
@@ -121,8 +121,8 @@
               class="h-10 w-10 my-2 rounded-full flex justify-center items-center overflow-hidden"
             >
               <img
-                src="@/assets/images/Avatar.png"
-                class="h-full w-full object-cover"
+                :src="profil"
+                class="h-[80%] w-[80%] object-cover"
                 alt="Avatar"
               />
             </article>
@@ -141,14 +141,22 @@
       @click="store.openSideBarChatAppContact = true"
       class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%] md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="@/assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
+      <img :src="adduser" alt="Gallery Icon" />
     </button>
   </section>
 </template>
 
 <script>
+import CameraAdd from '@/assets/images/icons/Camera_Add_Icon.png'
+import back from '@/assets/images/icons/Back_Icon.png'
+import adduser from '@/assets/images/icons/Add_User_Icon.png'
+import close from '@/assets/images/icons/Close_Icon.png'
+
+import phone from '@/assets/images/icons/Phone_Icon.png'
+import profil from '@/assets/images/icons/User_Attach_Icon.png'
 import { useChatStore } from '../../stores/chatsore'
 import { ref } from 'vue'
+
 
 export default {
   setup() {
@@ -165,8 +173,13 @@ export default {
 
     return {
       store,
-
+      back,
       settings,
+      adduser,
+      close,
+      CameraAdd,
+      phone,
+      profil,
     }
   },
 }

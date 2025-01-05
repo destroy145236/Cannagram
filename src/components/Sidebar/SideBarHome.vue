@@ -9,7 +9,7 @@
     <div class="flex flex-row justify-between items-center h-16 py-8 px-4">
       <section>
         <button @click="store.toogleOpenModalSetting">
-          <img src="@/assets/images/icons/Menu Icon.png" alt="" />
+          <img :src="menu" alt="" />
         </button>
         <ModalSetting />
       </section>
@@ -21,7 +21,7 @@
           <!-- Icône de recherche -->
           <img
             class="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2"
-            src="@/assets/images/icons/Search_Icon.png"
+            :src="search"
             alt="Search Icon"
           />
           <!-- Champ de recherche -->
@@ -71,10 +71,10 @@
         >
           <img
             v-if="store.openEditCanal == false"
-            src="@/assets/images/icons/pencil_icons.png"
+            :src="pencil"
             alt="Gallery Icon"
           />
-          <img v-else src="@/assets/images/icons/Close_Icon.png" alt="Gallery Icon" />
+          <img v-else :src="close" alt="Gallery Icon" />
         </button>
         <ModalNewCannal />
       </section>
@@ -88,9 +88,7 @@
               ? store.users.filter((user) => user.type === 'canal')
               : store.users"
         @click="
-          store.toogleOpenChat(item.id, item.type);
-          store.NameActiveChannel = item.name;
-          store.UrlActiveChannel = item.avatar;
+          store.toogleOpenChat(item.id, item.type) ;store.NameActiveChannel = item.name ;          store.UrlActiveChannel = item.avatar
         "
         :key="item.id"
         :class="[
@@ -152,8 +150,12 @@
 import { useChatStore } from '../../stores/chatsore'
 import ModalSetting from '../Modal/ModalSetting.vue'
 import ModalNewCannal from '../Modal/ModalNewCannal.vue'
+import menu from '@/assets/images/icons/Menu Icon.png'
 import { ref } from 'vue'
 import profil from '@/assets/images/icons/User_Attach_Icon.png'
+import search from '@/assets/images/icons/Search_Icon.png'
+import pencil from '@/assets/images/icons/pencil_icons.png'
+import close from '@/assets/images/icons/Close_Icon.png'
 
 export default {
   components: {
@@ -176,6 +178,10 @@ export default {
       store,
       profil,
       settings,
+      menu,
+      search,
+      pencil,
+      close
     }
   },
 }

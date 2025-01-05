@@ -15,7 +15,7 @@
     >
       <div class="flex flex-row items-center">
         <button class="block lg:hidden" @click="store.openChat = false">
-          <img class=" " src="@/assets/images/icons/Back_Icon.png" alt="" />
+          <img class=" " :src="back" alt="" />
         </button>
         <article
           class="h-12 w-12 my-2 rounded-full flex justify-center items-center overflow-hidden"
@@ -38,7 +38,7 @@
       </div>
       <section class="">
         <button class="relative" @click="store.toogleOpenModal">
-          <img src="@/assets/images/icons/Dots_icon.png" alt="" />
+          <img :src="dots" alt="" />
         </button>
 
         <DiscussionModal />
@@ -59,6 +59,8 @@ import DiscussionModal from '../Modal/DiscussionModal.vue'
 import AddMessage from '../Chat/AddMessage.vue'
 import SideBarChat from '../Sidebar/SideBarChat.vue'
 import profil from '@/assets/images/icons/User_Attach_Icon.png'
+import back from '@/assets/images/icons/Back_Icon.png'
+import dots from '@/assets/images/icons/Dots_icon.png'
 
 export default {
   components: {
@@ -75,6 +77,8 @@ export default {
     return {
       store,
       profil,
+      back,
+      dots,
     }
   },
 }

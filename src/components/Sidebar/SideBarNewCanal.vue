@@ -7,7 +7,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 1">
-            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" :src="back" alt="" />
           </button>
           <p class="font-medium">Nouveau Canal</p>
         </article>
@@ -21,7 +21,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
+              <img class="h-14 hover:h-16" :src="cameraAdd" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -64,7 +64,7 @@
       @click="store.handleaddNewUserCanal"
       class="absolute flex flex-row justify-center justify-items-center items-center bottom-20 right-0 md:bottom-[5%] md:left-[15%] m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="@/assets/images/icons/forward_icon.png" alt="Gallery Icon" />
+      <img :src="forward" alt="Gallery Icon" />
     </button>
   </section>
 </template>
@@ -72,6 +72,9 @@
 <script>
 import { useChatStore } from '../../stores/chatsore'
 import { ref } from 'vue'
+import back from '@/assets/images/icons/Back_Icon.png'
+import cameraAdd from '@/assets/images/icons/Camera_Add_Icon.png'
+import forward from '@/assets/images/icons/forward_icon.png'
 
 export default {
   setup() {
@@ -90,6 +93,9 @@ export default {
       store,
 
       settings,
+      back,
+      cameraAdd,
+      forward,
     }
   },
 }

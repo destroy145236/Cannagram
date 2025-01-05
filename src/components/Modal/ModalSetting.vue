@@ -9,7 +9,7 @@
         @click="store.toogleshowSetting"
         class="cursor-pointer flex flex-row items-center gap-2 p-2 text-white rounded-md hover:bg-gray-600"
       >
-        <img src="@/assets/images/icons/Gallery_Icon.png" alt="Gallery Icon" />
+        <img :src="Gallery" alt="Gallery Icon" />
 
         <p>Parametres</p>
       </button>
@@ -19,6 +19,7 @@
 </template>
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import Gallery from '@/assets/images/icons/Gallery_Icon.png'
 
 export default {
   setup() {
@@ -26,6 +27,7 @@ export default {
 
     return {
       store,
+      Gallery
     }
   },
 }

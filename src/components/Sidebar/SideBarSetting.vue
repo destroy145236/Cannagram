@@ -7,15 +7,15 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 1">
-            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" :src="back" alt="" />
           </button>
           <p>Paramétres</p>
         </article>
         <article class="flex flex-row gap-6">
           <button @click="store.indexSideBar = 3">
-            <img class="h-5" src="@/assets/images/icons/pencil_icons.png" alt="" />
+            <img class="h-5" :src="pencil" alt="" />
           </button>
-          <button><img class="h-5" src="@/assets/images/icons/Dots_icon.png" alt="" /></button>
+          <button><img class="h-5" :src="dots" alt="" /></button>
         </article>
       </section>
       <section class="h-[60%] my-5 flex flex-col items-center justify-center">
@@ -28,7 +28,7 @@
         <p class="text-sm text-secondaryText">En ligne</p>
       </section>
       <section class="flex flex-row gap-8 mx-2 items-center">
-        <button><img class="h-5" src="@/assets/images/icons/Phone_Icon.png" alt="" /></button>
+        <button><img class="h-5" :src="phone" alt="" /></button>
         <article>
           <p class="text-white text-lg">+228 98745632</p>
           <p class="text-sm text-secondaryText">Telephone</p>
@@ -43,7 +43,7 @@
         class="flex rounded-lg hover:bg-gray-800 flex-row gap-8 p-4 m-3 items-center"
       >
         <button>
-          <img class="h-5" src="@/assets/images/icons/Boockmark_Icon.png" alt="" />
+          <img class="h-5" :src="bookmark" alt="" />
         </button>
 
         <p class="text-md text-white">{{ item.name }}</p>
@@ -54,6 +54,11 @@
 <script>
 import { useChatStore } from '../../stores/chatsore'
 import { ref } from 'vue'
+import back from '@/assets/images/icons/Back_Icon.png'
+import pencil from '@/assets/images/icons/pencil_icons.png'
+import dots from '@/assets/images/icons/Dots_icon.png'
+import phone from '@/assets/images/icons/Phone_Icon.png'
+import bookmark from '@/assets/images/icons/Boockmark_Icon.png'
 
 export default {
   setup() {
@@ -70,8 +75,12 @@ export default {
 
     return {
       store,
-
+      back,
       settings,
+      pencil,
+      dots,
+      phone,
+      bookmark
     }
   },
 }

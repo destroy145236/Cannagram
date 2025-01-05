@@ -5,7 +5,7 @@
       <article
         class="flex flex-col items-center justify-center bg-violet-700 rounded-full h-[15vh] w-[15vh]"
       >
-        <img class="size-[40%]" src="@/assets/images/icons/Light_Icon.png" alt="" />
+        <img class="size-[40%]" :src="lightIcon" alt="" />
       </article>
     </section>
       <p class="text-white text-center text-xl py-3 md:text-3xl font-bold">Se connecter à Cannagram</p>
@@ -69,6 +69,7 @@
 </template>
 <script>
 import { useChatStore } from '../../stores/chatsore'
+import lightIcon from '@/assets/images/icons/Light_Icon.png'
 
 export default {
   setup() {
@@ -76,6 +77,7 @@ export default {
 
     return {
       store,
+      lightIcon
     }
   },
 }
