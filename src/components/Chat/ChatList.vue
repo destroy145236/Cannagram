@@ -18,7 +18,7 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart
+                store.showHeart = !store.showHeart;
                 store.applyReactionsDefault(item.id)
               "
               :class="[
