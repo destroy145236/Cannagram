@@ -6,10 +6,7 @@
     <div class="absolute inset-0 bg-gray-950 bg-opacity-20 rounded-md -z-10"></div>
     <article class="flex flex-row py-1 gap-3 items-center w-full">
       <button
-        @click="
-          store.indexSideBar = 6
-          store.openEditCanal = false
-        "
+        @click="handleModal"
         class="cursor-pointer flex flex-row items-center gap-2 p-2 text-white rounded-md hover:bg-gray-600"
       >
         <img src="@/assets/images/icons/Gallery_Icon.png" alt="Gallery Icon" />
@@ -18,10 +15,7 @@
     </article>
     <article class="flex flex-row py-1 gap-3 items-center w-full">
       <button
-        @click="
-          store.indexSideBar = 4
-          store.openEditCanal = false
-        "
+        @click="handleModal2"
         class="cursor-pointer flex flex-row items-center gap-2 p-2 text-white rounded-md hover:bg-gray-600"
       >
         <img src="@/assets/images/icons/Gallery_Icon.png" alt="Gallery Icon" />
@@ -38,8 +32,20 @@ export default {
   setup() {
     const store = useChatStore()
 
+    const handleModal = () => {
+      store.indexSideBar = 6
+      store.openEditCanal = false
+    }
+
+    const handleModal2 = () => {
+      store.indexSideBar = 4
+      store.openEditCanal = false
+    }
+
     return {
       store,
+      handleModal,
+      handleModal2,
     }
   },
 }

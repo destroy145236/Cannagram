@@ -11,7 +11,7 @@
 /* Global Font */
 @font-face {
   font-family: "Segeo Ui";
-  src: url("../assets/fonts/segoeuithis.ttf") format("truetype");
+  src: url("@/assets/fonts/segoeuithis.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
