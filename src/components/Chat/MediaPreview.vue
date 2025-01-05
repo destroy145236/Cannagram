@@ -7,7 +7,7 @@
       class="h-sceen w=[80%] lg:w-[25%] pb-10 bg-background rounded-3xl px-2 flex flex-col items-start"
     >
       <button class="flex flex-row p-3" @click="store.previewMedia">
-        <img src="../../assets/images/icons/Close_Icon.png" alt="" />
+        <img src="@/assets/images/icons/Close_Icon.png" alt="" />
       </button>
       <article class="flex flex-col items-center justify-center">
         <template v-if="store.fileType === 'image/jpeg' || store.fileType === 'image/png'">

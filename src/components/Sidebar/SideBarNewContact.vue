@@ -7,7 +7,7 @@
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 1">
-            <img class="h-5" src="../../assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
           </button>
           <p class="font-medium">Nouvelle discussion</p>
         </article>
@@ -21,11 +21,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img
-                class="h-14 hover:h-16"
-                src="../../assets/images/icons/Camera_Add_Icon.png"
-                alt=""
-              />
+              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -58,12 +54,12 @@
       Vous pouvez fournir une description facultatif pour votre canal
     </p>
     <button
-    type="submit"
+      type="submit"
       v-if="store.inputNameContact"
-      @click="store.handleaddNewUserdefault "
+      @click="store.handleaddNewUserdefault"
       class="absolute flex flex-row justify-center justify-items-center items-center bottom-20 right-0 md:bottom-[5%] md:left-[15%] m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="../../assets/images/icons/forward_icon.png" alt="Gallery Icon" />
+      <img src="@/assets/images/icons/forward_icon.png" alt="Gallery Icon" />
     </button>
   </section>
 </template>

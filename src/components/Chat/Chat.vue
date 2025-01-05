@@ -15,14 +15,18 @@
     >
       <div class="flex flex-row items-center">
         <button class="block lg:hidden" @click="store.openChat = false">
-          <img class=" " src="../../assets/images/icons/Back_Icon.png" alt="" />
+          <img class=" " src="@/assets/images/icons/Back_Icon.png" alt="" />
         </button>
         <article
           class="h-12 w-12 my-2 rounded-full flex justify-center items-center overflow-hidden"
         >
           <img
             :src="store.UrlActiveChannel ? store.UrlActiveChannel : profil"
-            :class="  [store.UrlActiveChannel == ''? 'h-[40%] w-[40%]' :'',, 'h-full w-full object-cover']"
+            :class="[
+              store.UrlActiveChannel == '' ? 'h-[40%] w-[40%]' : '',
+              ,
+              'h-full w-full object-cover',
+            ]"
           />
         </article>
         <section @click="store.showopenSideBarChat" class="px-2 cursor-pointer">
@@ -34,7 +38,7 @@
       </div>
       <section class="">
         <button class="relative" @click="store.toogleOpenModal">
-          <img src="../../assets/images/icons/Dots_icon.png" alt="" />
+          <img src="@/assets/images/icons/Dots_icon.png" alt="" />
         </button>
 
         <DiscussionModal />
@@ -54,7 +58,7 @@ import MediaPreview from '../Chat/MediaPreview.vue'
 import DiscussionModal from '../Modal/DiscussionModal.vue'
 import AddMessage from '../Chat/AddMessage.vue'
 import SideBarChat from '../Sidebar/SideBarChat.vue'
-import profil from '../../assets/images/icons/User_Attach_Icon.png'
+import profil from '@/assets/images/icons/User_Attach_Icon.png'
 
 export default {
   components: {

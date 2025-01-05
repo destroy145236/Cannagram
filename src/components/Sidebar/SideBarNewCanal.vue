@@ -1,10 +1,13 @@
 <template>
-  <section v-if="store.indexSideBar === 4" class="bg-black w-screen md:w-[100%] lg:w-[27%] h-screen text-white">
+  <section
+    v-if="store.indexSideBar === 4"
+    class="bg-black w-screen md:w-[100%] lg:w-[27%] h-screen text-white"
+  >
     <div class="h-auto py-3 px-5 bg-background">
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 1">
-            <img class="h-5" src="../../assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
           </button>
           <p class="font-medium">Nouveau Canal</p>
         </article>
@@ -18,11 +21,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img
-                class="h-14 hover:h-16"
-                src="../../assets/images/icons/Camera_Add_Icon.png"
-                alt=""
-              />
+              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -63,9 +62,9 @@
     <button
       v-if="store.inputNameCanal"
       @click="store.handleaddNewUserCanal"
-      class="absolute flex flex-row justify-center justify-items-center items-center bottom-20 right-0  md:bottom-[5%] md:left-[15%] m-6 size-14 rounded-full bg-violet-600"
+      class="absolute flex flex-row justify-center justify-items-center items-center bottom-20 right-0 md:bottom-[5%] md:left-[15%] m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="../../assets/images/icons/forward_icon.png" alt="Gallery Icon" />
+      <img src="@/assets/images/icons/forward_icon.png" alt="Gallery Icon" />
     </button>
   </section>
 </template>

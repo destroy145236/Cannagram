@@ -1,13 +1,16 @@
 <template>
   <section
-  v-if="store.openSideBarChatAppContact"
-    :class="['bg-black w-screen md:w-[100%] lg:w-[27%] h-screen text-white',store.openSideBarChat ? 'block sm:w-[100%] md:w-[100%] ':'hidden']"
+    v-if="store.openSideBarChatAppContact"
+    :class="[
+      'bg-black w-screen md:w-[100%] lg:w-[27%] h-screen text-white',
+      store.openSideBarChat ? 'block sm:w-[100%] md:w-[100%] ' : 'hidden',
+    ]"
   >
-  <div class="h-auto py-3 px-5 bg-background">
+    <div class="h-auto py-3 px-5 bg-background">
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.openSideBarChatAppContact = false">
-            <img class="h-5" src="../../assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
           </button>
           <p class="font-medium">Ajout de membres</p>
         </article>
@@ -34,23 +37,24 @@
       Vous pouvez fournir une description facultatif pour votre canal
     </p>
 
-
     <button
-
-      class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%]  md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
+      class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%] md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="../../assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
+      <img src="@/assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
     </button>
   </section>
   <section
-v-else
-    :class="['bg-black  w-screen md:w-[100%] lg:w-[27%] h-screen text-white',store.openSideBarChat ? 'block sm:w-[100%] md:w-[100%] ':'hidden']"
+    v-else
+    :class="[
+      'bg-black  w-screen md:w-[100%] lg:w-[27%] h-screen text-white',
+      store.openSideBarChat ? 'block sm:w-[100%] md:w-[100%] ' : 'hidden',
+    ]"
   >
     <div class="h-auto py-3 px-5 bg-background">
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
-          <button @click="store.openSideBarChat =false">
-            <img class="h-5" src="../../assets/images/icons/Close_Icon.png" alt="" />
+          <button @click="store.openSideBarChat = false">
+            <img class="h-5" src="@/assets/images/icons/Close_Icon.png" alt="" />
           </button>
           <p class="font-medium">Infos du Canal</p>
         </article>
@@ -64,11 +68,7 @@ v-else
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img
-                class="h-14 hover:h-16"
-                src="../../assets/images/icons/Camera_Add_Icon.png"
-                alt=""
-              />
+              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
             </label>
             <input
               id="uploadPhoto"
@@ -81,14 +81,14 @@ v-else
         </article>
       </section>
       <section class="flex flex-row gap-8 mx-2 items-center">
-        <button><img class="h-5" src="../../assets/images/icons/Phone_Icon.png" alt="" /></button>
+        <button><img class="h-5" src="@/assets/images/icons/Phone_Icon.png" alt="" /></button>
         <article>
           <p class="text-white text-md">C.me/Canaltest</p>
           <p class="text-sm text-secondaryText">Lien</p>
         </article>
       </section>
       <section class="flex flex-row gap-8 m-3 items-center">
-        <button><img class="h-5" src="../../assets/images/icons/Phone_Icon.png" alt="" /></button>
+        <button><img class="h-5" src="@/assets/images/icons/Phone_Icon.png" alt="" /></button>
         <article class="flex flex-row w-full justify-between">
           <p class="text-white text-md">Notifications</p>
           <input type="checkbox" name="" id="" />
@@ -98,7 +98,15 @@ v-else
 
     <div class="bg-background mt-2 h-full">
       <section class="flex text-sm flex-row justify-between">
-        <button  v-for="item in store.optionsSiderbarChAt" @click="store.activateOptions(item.id)" :key="item.id" :class="['hover:bg-gray-800 p-4 ', store.idActiveOptions === item.id ? 'text-violet-600 ' : '']">
+        <button
+          v-for="item in store.optionsSiderbarChAt"
+          @click="store.activateOptions(item.id)"
+          :key="item.id"
+          :class="[
+            'hover:bg-gray-800 p-4 ',
+            store.idActiveOptions === item.id ? 'text-violet-600 ' : '',
+          ]"
+        >
           {{ item.name }}
         </button>
       </section>
@@ -113,7 +121,7 @@ v-else
               class="h-10 w-10 my-2 rounded-full flex justify-center items-center overflow-hidden"
             >
               <img
-                src="../../assets/images/Avatar.png"
+                src="@/assets/images/Avatar.png"
                 class="h-full w-full object-cover"
                 alt="Avatar"
               />
@@ -130,15 +138,13 @@ v-else
       </section>
     </div>
     <button
-    @click="store.openSideBarChatAppContact= true"
-      class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%]  md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
+      @click="store.openSideBarChatAppContact = true"
+      class="absolute flex flex-row justify-center justify-items-center items-center bottom-[10%] right-0 md:bottom-[5%] md:right-[1%] lg:right-0 m-6 size-14 rounded-full bg-violet-600"
     >
-      <img src="../../assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
+      <img src="@/assets/images/icons/Add_User_Icon.png" alt="Gallery Icon" />
     </button>
   </section>
 </template>
-
-
 
 <script>
 import { useChatStore } from '../../stores/chatsore'

@@ -18,12 +18,14 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart;
+                store.showHeart = !store.showHeart
                 store.applyReactionsDefault(item.id)
               "
               :class="[
                 'p-2 flex my-2 gap-1 cursor-pointer  max-w-[70%] h-[20%] md:max-w-[50%] lg:max-w-[30%] w-auto break-words',
-                item.status == 'user' ? 'rounded-t-xl rounded-bl-xl bg-blue-600' : 'rounded-t-xl rounded-br-xl bg-gray-500',
+                item.status == 'user'
+                  ? 'rounded-t-xl rounded-bl-xl bg-blue-600'
+                  : 'rounded-t-xl rounded-br-xl bg-gray-500',
               ]"
             >
               <template v-if="item.media == ''">
@@ -41,7 +43,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="../../assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
                       </p>
                     </article>
                   </div>
@@ -56,7 +58,7 @@
                     "
                   >
                     <button @click="store.previewMedia(item.media, item.fileType)">
-                      <img :src="item.media" class=" rounded-xl" alt="" />
+                      <img :src="item.media" class="rounded-xl" alt="" />
                     </button>
                     <p class="text-white">{{ item.text }}</p>
                   </template>
@@ -72,7 +74,7 @@
                       class="flex flex-col items-start justify-center rounded-xl gap-2 px-6"
                     >
                       <article class="flex flex-row items-center justify-center gap-2">
-                        <img src="../../assets/images/icons/document.png" class="h-10" alt="" />
+                        <img src="@/assets/images/icons/document.png" class="h-10" alt="" />
                         <article class="flex flex-col items-start text-white">
                           <p class="text-white text-md overflow-x-hidden text-start">
                             {{ item.fileName }}
@@ -96,7 +98,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="../../assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
                       </p>
                     </article>
                   </div>
@@ -104,7 +106,7 @@
               </template>
               <div
                 v-show="store.showHeart && store.idshowHeart === item.id"
-                class="my-7 bg-background absolute rounded-full px-2  flex flex-row gap-2 items-center justify-items-center justify-center w-auto h-10"
+                class="my-7 bg-background absolute rounded-full px-2 flex flex-row gap-2 items-center justify-items-center justify-center w-auto h-10"
               >
                 <p
                   v-for="item in store.reactiveEmojies"
@@ -139,7 +141,7 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart;
+                store.showHeart = !store.showHeart
                 store.applyReactionsCanal(item.id)
               "
               :class="[
@@ -162,7 +164,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="../../assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
                       </p>
                     </article>
                   </div>
@@ -186,7 +188,7 @@
                       @click="store.downloadFile(item.media)"
                       class="flex flex-row items-center justify-center rounded-xl gap-2 p-4"
                     >
-                      <img src="../../assets/images/icons/document.png" class="h-14" alt="" />
+                      <img src="@/assets/images/icons/document.png" class="h-14" alt="" />
                       <article class="flex flex-col items-start text-white">
                         <p class="text-white text-lg">{{ item.fileName }}</p>
                         <p>{{ item.filesize }} ko</p>
@@ -194,9 +196,8 @@
                     </button>
                   </template>
 
-           
                   <div class="flex flex-row justify-between items-end py-1">
-                    <article v-if="item.reactions != ''" class="flex flex-row ">
+                    <article v-if="item.reactions != ''" class="flex flex-row">
                       <p class="bg-background rounded-full w-auto px-2">{{ item.reactions }}</p>
                       <article
                         class="h-5 m-1 w-5 rounded-full bg-gradient-to-b from-violet-200 to-violet-600 flex flex-row items-center justify-center"
@@ -207,7 +208,7 @@
                     <article class="flex gap-2 items-end">
                       <p class="text-xs text-white">{{ item.time }}</p>
                       <p>
-                        <img class="h-2 w-3" src="../../assets/images/icons/vue.png" alt="" />
+                        <img class="h-2 w-3" src="@/assets/images/icons/vue.png" alt="" />
                       </p>
                     </article>
                   </div>
@@ -239,7 +240,7 @@
           <!-- Icône de recherche -->
           <div class="relative left-7">
             <button type="button" @click="toggleEmojiPicker">
-              <img src="../../assets/images/icons/emoji_icon.png" alt="Emoji" />
+              <img src="@/assets/images/icons/emoji_icon.png" alt="Emoji" />
             </button>
             <div v-if="store.showEmojiPicker" class="absolute bottom-full left-0 z-50">
               <EmojiPicker @select="onSelectEmoji" />
@@ -258,7 +259,7 @@
           <button type="button" @click="store.toogleFile">
             <img
               class="absolute right-3 bottom-1/4"
-              src="../../assets/images/icons/Attach_Icon.png"
+              src="@/assets/images/icons/Attach_Icon.png"
               alt="Upload_Icon"
             />
           </button>
@@ -266,7 +267,7 @@
         <ModalForUplaod />
 
         <button type="submit" class="bg-violet-600 rounded-full p-4">
-          <img class=" " src="../../assets/images/icons/Send_icon.png" alt="Send Icon" />
+          <img class=" " src="@/assets/images/icons/Send_icon.png" alt="Send Icon" />
         </button>
       </form>
     </section>

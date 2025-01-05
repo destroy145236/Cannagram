@@ -9,7 +9,7 @@
     <div class="flex flex-row justify-between items-center h-16 py-8 px-4">
       <section>
         <button @click="store.toogleOpenModalSetting">
-          <img src="../../assets/images/icons/Menu Icon.png" alt="" />
+          <img src="@/assets/images/icons/Menu Icon.png" alt="" />
         </button>
         <ModalSetting />
       </section>
@@ -21,7 +21,7 @@
           <!-- Icône de recherche -->
           <img
             class="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2"
-            src="../../assets/images/icons/Search_Icon.png"
+            src="@/assets/images/icons/Search_Icon.png"
             alt="Search Icon"
           />
           <!-- Champ de recherche -->
@@ -71,10 +71,10 @@
         >
           <img
             v-if="store.openEditCanal == false"
-            src="../../assets/images/icons/pencil_icons.png"
+            src="@/assets/images/icons/pencil_icons.png"
             alt="Gallery Icon"
           />
-          <img v-else src="../../assets/images/icons/Close_Icon.png" alt="Gallery Icon" />
+          <img v-else src="@/assets/images/icons/Close_Icon.png" alt="Gallery Icon" />
         </button>
         <ModalNewCannal />
       </section>
@@ -88,9 +88,9 @@
               ? store.users.filter((user) => user.type === 'canal')
               : store.users"
         @click="
-          store.toogleOpenChat(item.id, item.type);
-          store.NameActiveChannel = item.name;
-          store.UrlActiveChannel = item.avatar;
+          store.toogleOpenChat(item.id, item.type)
+          store.NameActiveChannel = item.name
+          store.UrlActiveChannel = item.avatar
         "
         :key="item.id"
         :class="[
@@ -102,7 +102,11 @@
         <article
           class="h-14 w-14 my-2 rounded-full bg-gradient-to-b from-violet-200 to-violet-600 flex justify-center items-center overflow-hidden"
         >
-          <img :src="item.avatar == '' ? profil : item.avatar" :class="[ item.avatar == ''? 'h-6 w-6' :'' , 'h-full w-full object-cover']" alt="" />
+          <img
+            :src="item.avatar == '' ? profil : item.avatar"
+            :class="[item.avatar == '' ? 'h-6 w-6' : '', 'h-full w-full object-cover']"
+            alt=""
+          />
         </article>
 
         <!-- Content Section -->
@@ -149,7 +153,7 @@ import { useChatStore } from '../../stores/chatsore'
 import ModalSetting from '../Modal/ModalSetting.vue'
 import ModalNewCannal from '../Modal/ModalNewCannal.vue'
 import { ref } from 'vue'
-import profil from '../../assets/images/icons/User_Attach_Icon.png'
+import profil from '@/assets/images/icons/User_Attach_Icon.png'
 
 export default {
   components: {

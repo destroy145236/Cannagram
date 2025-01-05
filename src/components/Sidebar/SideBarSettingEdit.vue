@@ -1,10 +1,13 @@
 <template>
-  <section v-if="store.indexSideBar === 3" class="bg-black overflow-y-scroll w-screen md:w-[60%] lg:w-[27%] h-screen text-white">
+  <section
+    v-if="store.indexSideBar === 3"
+    class="bg-black overflow-y-scroll w-screen md:w-[60%] lg:w-[27%] h-screen text-white"
+  >
     <div class="h-auto py-3 px-5 bg-background">
       <section class="flex flex-row justify-between">
         <article class="flex flex-row gap-5">
           <button @click="store.indexSideBar = 2">
-            <img class="h-5" src="../../assets/images/icons/Back_Icon.png" alt="" />
+            <img class="h-5" src="@/assets/images/icons/Back_Icon.png" alt="" />
           </button>
           <p>Modifier le profil</p>
         </article>
@@ -18,11 +21,7 @@
           </div>
           <div v-else>
             <label for="uploadPhoto">
-              <img
-                class="h-14 hover:h-16"
-                src="../../assets/images/icons/Camera_Add_Icon.png"
-                alt=""
-              />
+              <img class="h-14 hover:h-16" src="@/assets/images/icons/Camera_Add_Icon.png" alt="" />
             </label>
             <input
               id="uploadPhoto"
