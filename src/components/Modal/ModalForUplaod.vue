@@ -1,7 +1,7 @@
 <template>
   <section
     v-if="store.toogleFilestate"
-    class="absolute p-3 bottom-[13%] right-[15%] bg-gray-100 bg-opacity-15 backdrop-blur-3xl rounded-md text-white transition-all ease-out duration-500"
+    class="absolute p-3 bottom-[20%] md:bottom-[13%] right-[15%] bg-gray-100 bg-opacity-15 backdrop-blur-3xl rounded-md text-white transition-all ease-out duration-500"
   >
     <div class="absolute inset-0 bg-gray-950 bg-opacity-20 rounded-md -z-10"></div>
     <article class="flex flex-row py-1 gap-3 items-center">
