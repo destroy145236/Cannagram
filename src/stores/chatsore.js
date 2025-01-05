@@ -121,6 +121,7 @@ export const useChatStore = defineStore('chat', () => {
 
     selectUrl.value = null
     indexSideBar.value = 5
+    openChat.value = false
   }
 
   const discussionsdefault = ref([
@@ -276,7 +277,7 @@ export const useChatStore = defineStore('chat', () => {
 
   const toogleOpenChatCanal = () => {
     handleaddNewUserCanal()
-  
+
   }
 
   const toggleEmojiPicker = () => {
