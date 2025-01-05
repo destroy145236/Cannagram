@@ -88,9 +88,9 @@
               ? store.users.filter((user) => user.type === 'canal')
               : store.users"
         @click="
-          store.toogleOpenChat(item.id, item.type)
-          store.NameActiveChannel = item.name
-          store.UrlActiveChannel = item.avatar
+          store.toogleOpenChat(item.id, item.type);
+          store.NameActiveChannel = item.name;
+          store.UrlActiveChannel = item.avatar;
         "
         :key="item.id"
         :class="[
