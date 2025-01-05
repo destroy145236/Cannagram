@@ -141,7 +141,7 @@
           >
             <section
               @click="
-                store.showHeart = !store.showHeart
+                store.showHeart = !store.showHeart;
                 store.applyReactionsCanal(item.id)
               "
               :class="[
